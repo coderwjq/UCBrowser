@@ -66,6 +66,12 @@ public class UCBottomBar extends BaseLayout {
         if(mDirection == UCRootView.SCROLL_HORIZONTALLY){
             return;
         }
+
+        if (rate > 0) {
+            // 当下拉时，解决底部菜单按钮向左滑动的bug
+            return;
+        }
+
         //第1,2,4个按钮渐隐
         ivForward.setAlpha(calculateBtnAlpha(rate));
         ivBack.setAlpha(calculateBtnAlpha(rate));
